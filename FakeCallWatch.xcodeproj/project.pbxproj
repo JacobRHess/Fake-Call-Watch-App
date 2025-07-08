@@ -16,6 +16,18 @@
 		D1C84A1A2DF77A1200760080 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A192DF77A1200760080 /* ContentView.swift */; };
 		D1C84A1C2DF77A1200760080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C84A1B2DF77A1200760080 /* Assets.xcassets */; };
 		D1C84A1F2DF77A1200760080 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C84A1E2DF77A1200760080 /* Preview Assets.xcassets */; };
+		D1C84A2A2DF77CAE00760080 /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A292DF77CAE00760080 /* WatchSessionDelegate.swift */; };
+		D1C84A2C2DF8C23C00760080 /* PhoneSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A2B2DF8C23C00760080 /* PhoneSessionDelegate.swift */; };
+		D1C84A2E2DFA1F7D00760080 /* WCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A2D2DFA1F7D00760080 /* WCSessionDelegate.swift */; };
+		D1C84A302E05E7E500760080 /* FakeCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A2F2E05E7E500760080 /* FakeCallView.swift */; };
+		D1C84A322E0B529A00760080 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A312E0B529A00760080 /* MainTabView.swift */; };
+		D1C84A3A2E1DB94300760080 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C84A392E1DB94300760080 /* WidgetKit.framework */; };
+		D1C84A3C2E1DB94300760080 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C84A3B2E1DB94300760080 /* SwiftUI.framework */; };
+		D1C84A3F2E1DB94300760080 /* FakeCallComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A3E2E1DB94300760080 /* FakeCallComplication.swift */; };
+		D1C84A422E1DB94700760080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C84A412E1DB94700760080 /* Assets.xcassets */; };
+		D1C84A442E1DB94700760080 /* FakeCallComplication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A402E1DB94300760080 /* FakeCallComplication.intentdefinition */; };
+		D1C84A452E1DB94700760080 /* FakeCallComplication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D1C84A402E1DB94300760080 /* FakeCallComplication.intentdefinition */; };
+		D1C84A482E1DB94700760080 /* FakeCallComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D1C84A372E1DB94300760080 /* FakeCallComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +37,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D1C84A112DF77A1200760080;
 			remoteInfo = "FakeCallWatch Watch App";
+		};
+		D1C84A462E1DB94700760080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1C849FA2DF77A1100760080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1C84A362E1DB94300760080;
+			remoteInfo = FakeCallComplicationExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,6 +59,17 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1C84A4C2E1DB94700760080 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1C84A482E1DB94700760080 /* FakeCallComplicationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +83,18 @@
 		D1C84A192DF77A1200760080 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1C84A1B2DF77A1200760080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1C84A1E2DF77A1200760080 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D1C84A292DF77CAE00760080 /* WatchSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionDelegate.swift; sourceTree = "<group>"; };
+		D1C84A2B2DF8C23C00760080 /* PhoneSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSessionDelegate.swift; sourceTree = "<group>"; };
+		D1C84A2D2DFA1F7D00760080 /* WCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSessionDelegate.swift; sourceTree = "<group>"; };
+		D1C84A2F2E05E7E500760080 /* FakeCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCallView.swift; sourceTree = "<group>"; };
+		D1C84A312E0B529A00760080 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		D1C84A372E1DB94300760080 /* FakeCallComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FakeCallComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1C84A392E1DB94300760080 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D1C84A3B2E1DB94300760080 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D1C84A3E2E1DB94300760080 /* FakeCallComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCallComplication.swift; sourceTree = "<group>"; };
+		D1C84A402E1DB94300760080 /* FakeCallComplication.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = FakeCallComplication.intentdefinition; sourceTree = "<group>"; };
+		D1C84A412E1DB94700760080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1C84A432E1DB94700760080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +112,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1C84A342E1DB94300760080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1C84A3C2E1DB94300760080 /* SwiftUI.framework in Frameworks */,
+				D1C84A3A2E1DB94300760080 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +129,8 @@
 			children = (
 				D1C84A042DF77A1100760080 /* FakeCallWatch */,
 				D1C84A162DF77A1200760080 /* FakeCallWatch Watch App */,
+				D1C84A3D2E1DB94300760080 /* FakeCallComplication */,
+				D1C84A382E1DB94300760080 /* Frameworks */,
 				D1C84A032DF77A1100760080 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +140,7 @@
 			children = (
 				D1C84A022DF77A1100760080 /* FakeCallWatch.app */,
 				D1C84A122DF77A1200760080 /* FakeCallWatch Watch App.app */,
+				D1C84A372E1DB94300760080 /* FakeCallComplicationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +152,9 @@
 				D1C84A072DF77A1100760080 /* ContentView.swift */,
 				D1C84A092DF77A1200760080 /* Assets.xcassets */,
 				D1C84A0B2DF77A1200760080 /* Preview Content */,
+				D1C84A2B2DF8C23C00760080 /* PhoneSessionDelegate.swift */,
+				D1C84A2D2DFA1F7D00760080 /* WCSessionDelegate.swift */,
+				D1C84A2F2E05E7E500760080 /* FakeCallView.swift */,
 			);
 			path = FakeCallWatch;
 			sourceTree = "<group>";
@@ -115,8 +172,10 @@
 			children = (
 				D1C84A172DF77A1200760080 /* FakeCallWatchApp.swift */,
 				D1C84A192DF77A1200760080 /* ContentView.swift */,
+				D1C84A292DF77CAE00760080 /* WatchSessionDelegate.swift */,
 				D1C84A1B2DF77A1200760080 /* Assets.xcassets */,
 				D1C84A1D2DF77A1200760080 /* Preview Content */,
+				D1C84A312E0B529A00760080 /* MainTabView.swift */,
 			);
 			path = "FakeCallWatch Watch App";
 			sourceTree = "<group>";
@@ -127,6 +186,26 @@
 				D1C84A1E2DF77A1200760080 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D1C84A382E1DB94300760080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1C84A392E1DB94300760080 /* WidgetKit.framework */,
+				D1C84A3B2E1DB94300760080 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1C84A3D2E1DB94300760080 /* FakeCallComplication */ = {
+			isa = PBXGroup;
+			children = (
+				D1C84A3E2E1DB94300760080 /* FakeCallComplication.swift */,
+				D1C84A402E1DB94300760080 /* FakeCallComplication.intentdefinition */,
+				D1C84A412E1DB94700760080 /* Assets.xcassets */,
+				D1C84A432E1DB94700760080 /* Info.plist */,
+			);
+			path = FakeCallComplication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,15 +237,34 @@
 				D1C84A0E2DF77A1200760080 /* Sources */,
 				D1C84A0F2DF77A1200760080 /* Frameworks */,
 				D1C84A102DF77A1200760080 /* Resources */,
+				D1C84A4C2E1DB94700760080 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D1C84A472E1DB94700760080 /* PBXTargetDependency */,
 			);
 			name = "FakeCallWatch Watch App";
 			productName = "FakeCallWatch Watch App";
 			productReference = D1C84A122DF77A1200760080 /* FakeCallWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D1C84A362E1DB94300760080 /* FakeCallComplicationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1C84A492E1DB94700760080 /* Build configuration list for PBXNativeTarget "FakeCallComplicationExtension" */;
+			buildPhases = (
+				D1C84A332E1DB94300760080 /* Sources */,
+				D1C84A342E1DB94300760080 /* Frameworks */,
+				D1C84A352E1DB94300760080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeCallComplicationExtension;
+			productName = FakeCallComplicationExtension;
+			productReference = D1C84A372E1DB94300760080 /* FakeCallComplicationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -182,6 +280,9 @@
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					D1C84A112DF77A1200760080 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					D1C84A362E1DB94300760080 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -201,6 +302,7 @@
 			targets = (
 				D1C84A012DF77A1100760080 /* FakeCallWatch */,
 				D1C84A112DF77A1200760080 /* FakeCallWatch Watch App */,
+				D1C84A362E1DB94300760080 /* FakeCallComplicationExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +326,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1C84A352E1DB94300760080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1C84A422E1DB94700760080 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -231,8 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C84A302E05E7E500760080 /* FakeCallView.swift in Sources */,
+				D1C84A2C2DF8C23C00760080 /* PhoneSessionDelegate.swift in Sources */,
 				D1C84A082DF77A1100760080 /* ContentView.swift in Sources */,
 				D1C84A062DF77A1100760080 /* FakeCallWatchApp.swift in Sources */,
+				D1C84A2E2DFA1F7D00760080 /* WCSessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +354,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C84A1A2DF77A1200760080 /* ContentView.swift in Sources */,
+				D1C84A2A2DF77CAE00760080 /* WatchSessionDelegate.swift in Sources */,
+				D1C84A452E1DB94700760080 /* FakeCallComplication.intentdefinition in Sources */,
 				D1C84A182DF77A1200760080 /* FakeCallWatchApp.swift in Sources */,
+				D1C84A322E0B529A00760080 /* MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1C84A332E1DB94300760080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1C84A3F2E1DB94300760080 /* FakeCallComplication.swift in Sources */,
+				D1C84A442E1DB94700760080 /* FakeCallComplication.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +377,11 @@
 			isa = PBXTargetDependency;
 			target = D1C84A112DF77A1200760080 /* FakeCallWatch Watch App */;
 			targetProxy = D1C84A142DF77A1200760080 /* PBXContainerItemProxy */;
+		};
+		D1C84A472E1DB94700760080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1C84A362E1DB94300760080 /* FakeCallComplicationExtension */;
+			targetProxy = D1C84A462E1DB94700760080 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -368,6 +498,7 @@
 		D1C84A232DF77A1200760080 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +528,7 @@
 		D1C84A242DF77A1200760080 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,6 +621,65 @@
 			};
 			name = Release;
 		};
+		D1C84A4A2E1DB94700760080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FakeCallComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FakeCallComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobh.FakeCallWatch.watchkitapp.FakeCallComplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		D1C84A4B2E1DB94700760080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FakeCallComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FakeCallComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobh.FakeCallWatch.watchkitapp.FakeCallComplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -515,6 +706,15 @@
 			buildConfigurations = (
 				D1C84A272DF77A1200760080 /* Debug */,
 				D1C84A282DF77A1200760080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1C84A492E1DB94700760080 /* Build configuration list for PBXNativeTarget "FakeCallComplicationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1C84A4A2E1DB94700760080 /* Debug */,
+				D1C84A4B2E1DB94700760080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

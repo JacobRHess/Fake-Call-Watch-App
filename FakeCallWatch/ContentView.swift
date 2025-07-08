@@ -1,26 +1,35 @@
-//
-//  ContentView.swift
-//  FakeCallWatch
-//
-//  Created by Jacob Hess on 6/9/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showFakeCall = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
+        VStack(spacing: 20) {
+            Image(systemName: "phone.circle.fill")
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+                .foregroundColor(.green)
+                .font(.system(size: 50))
+            
+            Text("Fake Call App")
+                .font(.title)
+                .fontWeight(.bold)
+            
+            Text("Use your Apple Watch to trigger realistic fake calls!")
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+                .padding()
         }
         .padding()
+        .fullScreenCover(isPresented: $showFakeCall) {
+            FakeCallView()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .showFakeCall)) { _ in
+            print("ContentView received showFakeCall notification")
+            showFakeCall = true
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+extension Notification.Name {
+    static let showFakeCall = Notification.Name("showFakeCall")
 }
