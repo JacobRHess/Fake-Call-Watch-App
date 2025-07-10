@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct FakeCallView: View {
-    @Environment(\.dismiss) private var dismiss
     @State private var isCallActive = false
+    @Binding var isPresented: Bool
+    
+    init(isPresented: Binding<Bool> = .constant(true)) {
+        self._isPresented = isPresented
+    }
     
     var body: some View {
         ZStack {
@@ -87,10 +91,10 @@ struct FakeCallView: View {
     }
     
     private func declineCall() {
-        dismiss()
+        isPresented = false
     }
     
     private func endCall() {
-        dismiss()
+        isPresented = false
     }
 }

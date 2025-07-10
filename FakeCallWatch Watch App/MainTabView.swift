@@ -3,6 +3,8 @@ import WatchConnectivity
 
 struct MainTabView: View {
     @State private var selectedTimer: Int = 0
+    @State private var autoTriggered = false
+    @Environment(\.scenePhase) private var scenePhase
     
     private func sendFakeCallMessage() {
         print("Watch button pressed!")
@@ -18,7 +20,6 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            // Settings Tab
             VStack {
                 Text("Timer Settings")
                     .font(.headline)
@@ -50,7 +51,6 @@ struct MainTabView: View {
                 Text("Settings")
             }
             
-            // Call Tab
             VStack {
                 Text("Need to Escape?")
                     .font(.headline)
@@ -63,10 +63,8 @@ struct MainTabView: View {
                 
                 Button("Call me Now") {
                     if selectedTimer == 0 {
-                        // Immediate call
                         sendFakeCallMessage()
                     } else {
-                        // Delayed call
                         DispatchQueue.main.asyncAfter(deadline: .now() + Double(selectedTimer)) {
                             sendFakeCallMessage()
                         }
@@ -83,16 +81,31 @@ struct MainTabView: View {
             }
         }
         .onAppear {
-                    if WCSession.isSupported() {
-                        WCSession.default.delegate = WatchSessionDelegate.shared
-                        WCSession.default.activate()
+            if WCSession.isSupported() {
+                WCSession.default.delegate = WatchSessionDelegate.shared
+                WCSession.default.activate()
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active && !autoTriggered {
+                // Auto-trigger call when app becomes active (from complication tap)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if selectedTimer == 0 {
+                        sendFakeCallMessage()
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + Double(selectedTimer)) {
+                            sendFakeCallMessage()
+                        }
                     }
+                    autoTriggered = true
                 }
             }
         }
+    }
+}
 
-        struct MainTabView_Previews: PreviewProvider {
-            static var previews: some View {
-                MainTabView()
-            }
-        }
+struct MainTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainTabView()
+    }
+}

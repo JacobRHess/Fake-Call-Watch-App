@@ -25,6 +25,18 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
 }
 
+class ComplicationSessionDelegate: NSObject, WCSessionDelegate {
+    static let shared = ComplicationSessionDelegate()
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Complication session activated: \(activationState.rawValue)")
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        // Not needed for complication
+    }
+}
+
 struct FakeCallComplicationEntryView : View {
     var entry: Provider.Entry
 
@@ -44,10 +56,24 @@ struct FakeCallComplicationEntryView : View {
     }
     
     private func triggerFakeCall() {
-        if WCSession.isSupported() && WCSession.default.isReachable {
-            WCSession.default.sendMessage(["command": "fakeCall"], replyHandler: nil) { error in
+        guard WCSession.isSupported() else {
+            print("WCSession not supported")
+            return
+        }
+        
+        let session = WCSession.default
+        if session.activationState != .activated {
+            session.delegate = ComplicationSessionDelegate.shared
+            session.activate()
+        }
+        
+        if session.isReachable {
+            session.sendMessage(["command": "fakeCall"], replyHandler: nil) { error in
                 print("Complication error: \(error.localizedDescription)")
             }
+            print("Complication sent fake call message")
+        } else {
+            print("iPhone not reachable from complication")
         }
     }
 }

@@ -1,6 +1,8 @@
 import Foundation
 import WatchConnectivity
 import UserNotifications
+import UIKit
+import AudioToolbox
 
 class PhoneSessionDelegate: NSObject, WCSessionDelegate {
     static let shared = PhoneSessionDelegate()
@@ -20,17 +22,23 @@ class PhoneSessionDelegate: NSObject, WCSessionDelegate {
     }
     
     private func showFakeCallNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        
         let content = UNMutableNotificationContent()
-        content.title = "Incoming call"
-        content.subtitle = "Mom"
-        content.body = "mobile +1 (555) 123-4567"
-        content.sound = .defaultRingtone
+        content.title = "Mom"
+        content.subtitle = "iPhone"
+        content.body = "Incoming call..."
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("opening.caf"))
         content.interruptionLevel = .critical
         content.categoryIdentifier = "FAKE_CALL_CATEGORY"
-        content.sound = UNNotificationSound.defaultRingtone
         
+        // Add call-like threading to group with other "calls"
+        content.threadIdentifier = "incoming-call"
+        
+        let uniqueID = "fake_call_\(Date().timeIntervalSince1970)_\(UUID().uuidString)"
         let request = UNNotificationRequest(
-            identifier: "fake_call_\(UUID().uuidString)",
+            identifier: uniqueID,
             content: content,
             trigger: nil
         )
